@@ -5,6 +5,8 @@
 	<script>
 		$('#date').datepicker({
 			format : 'dd-mm-yyyy'
+		}).on('change', function(){
+			$('.datepicker').hide();
 		});
 	</script>
 </body>
