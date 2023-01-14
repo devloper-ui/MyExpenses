@@ -56,7 +56,7 @@ public class ExpenseService {
 		return expenseRepository.findById(id);
 	}
 	
-	//transactional and modifying both queries are needed for dml operations
+	//transactional and modifying both annotations are needed for dml operations
 	@Transactional
 	public void updateExpense(Expense expense, int id){		
 		System.out.println(expense);

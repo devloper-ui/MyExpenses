@@ -15,24 +15,32 @@
 
 		<thead class="thead-light">
 			<tr>
-				<th>Id</th>
 				<th>Credit</th>
 				<th>Debit</th>
 				<th>For</th>
 				<th>Reason</th>
 				<th>Date</th>
+				<th>Update/Delete</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach items="${expenses}" var="expense">
 				<tr>
-					<td>${expense.id}</td>
 					<td>${expense.credit}</td>
 					<!-- use in small case irrespective of model values-->
 					<td>${expense.debit}</td>
 					<td>${expense.foor}</td>
 					<td>${expense.reason}</td>
 					<td>${expense.date}</td>
+					<td class="col-md-2">
+						<a class="btn btn-success" href="/updateData/${expense.id}">
+							<span data-toggle="tooltip" 
+								  title="Update data" 
+								  class="glyphicon glyphicon-refresh"
+								  data-placement="right"></span>
+						</a>
+					</td>
+					<!-- glyphicon glyphicon-trash -->
 				</tr>
 			</c:forEach>
 			<!-- for(Expense expense: expenses) since its html it does

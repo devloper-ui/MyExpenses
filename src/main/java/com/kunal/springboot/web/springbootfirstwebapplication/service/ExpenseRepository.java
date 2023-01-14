@@ -16,7 +16,7 @@ public interface ExpenseRepository extends CrudRepository<Expense, Integer>{
 	Expense findById(int id);
 	
 	//for update operation problem solved by keeping return type null
-	//witha ny other return type it gives error as no ddl/dml operation can be performed
+	//with any other return type it gives error as no ddl/dml operation can be performed
 	@Modifying(clearAutomatically = true)
 	@Query("update Expense e set e.Foor= :Foor, e.reason= :reason, e.Date= :Date where e.id= :id")
 	void updateData(String Foor, String reason, String Date, int id);
