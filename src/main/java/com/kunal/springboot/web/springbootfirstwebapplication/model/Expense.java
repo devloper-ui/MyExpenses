@@ -26,8 +26,9 @@ public class Expense {
 		super();
 	}
 	
-	public Expense(int credit, int debit, String foor, String reason, String date, int balance) {
+	public Expense(int id,int credit, int debit, String foor, String reason, String date, int balance) {
 		super();
+		this.id =id;
 		this.Credit = credit;
 		this.Debit = debit;
 		this.Foor = foor;
@@ -35,6 +36,14 @@ public class Expense {
 		this.Date = date;
 		this.Balance = balance;
 	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setID(int id) {
+		this.id = id;
+	}	
 
 	public int getCredit() {
 		return Credit;
@@ -86,8 +95,8 @@ public class Expense {
 
 	@Override
 	public String toString() {
-		return "Expense [credit=" + Credit + ", debit=" + Debit + ", foor=" + Foor + ", reason=" + reason + ", date="
-				+ Date + ", balance=" + Balance + "]";
+		return "Expense [id=" + id + ", Credit=" + Credit + ", Debit=" + Debit + ", Foor=" + Foor + ", reason=" + reason
+				+ ", Date=" + Date + ", Balance=" + Balance + "]";
 	}
-
+	
 }

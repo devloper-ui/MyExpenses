@@ -15,6 +15,7 @@
 
 		<thead class="thead-light">
 			<tr>
+				<th>Id</th>
 				<th>Credit</th>
 				<th>Debit</th>
 				<th>For</th>
@@ -25,6 +26,7 @@
 		<tbody>
 			<c:forEach items="${expenses}" var="expense">
 				<tr>
+					<td>${expense.id}</td>
 					<td>${expense.credit}</td>
 					<!-- use in small case irrespective of model values-->
 					<td>${expense.debit}</td>
