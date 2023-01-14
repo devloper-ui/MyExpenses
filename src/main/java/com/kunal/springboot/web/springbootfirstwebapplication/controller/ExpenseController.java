@@ -37,11 +37,13 @@ public class ExpenseController {
 
 	@GetMapping(value = "/insertData")
 	public String displayInsertDataPage(ModelMap model) {
-		model.addAttribute("expense", new Expense());// this "expense" i.e first attribute will get mapped to modelAttribute at form tag and is needed to show how expense object 
+		model.addAttribute("expense", new Expense());
+		// this "expense" i.e first attribute will get mapped to modelAttribute
+		//at form tag and is needed to show how expense object 
 		//looks like so as to pass it directly to a method eg line30,31
 		return "insert";
 	}
-//while creating post first you need to create get as well for same url.
+	//while creating post first you need to create get as well for same url.
 	@PostMapping(value = "/insertData")
 	public String insertData(ModelMap model, Expense expense) {
 		int balance = expenseService.getBalance();
@@ -57,28 +59,21 @@ public class ExpenseController {
 	}
 
 	@GetMapping(value = "/getBalance")
-	//@ResponseBody
 	public String showBalance(ModelMap model) {
-		//return "Your Balance is : "+expenseService.getBalance();
 		model.put("balance", expenseService.getBalance());
 		return "balance";
 	}
-	
-//	@GetMapping(value = "/updateData/{id}")
-//	public String updateExpense(ModelMap model, @PathVariable("id") int id) {
-//		model.put("expenses", expenseService.findByID(id));
-//		return "display";
-//	}
-	
+		
 	@GetMapping(value = "/updateData/{id}")
 	public String displayUpdateDataPage(ModelMap model, @PathVariable("id") int id) {
-		model.addAttribute("expense", expenseService.findByID(id));// this "expense" i.e first attribute will get mapped to modelAttribute at form tag and is needed to show how expense object 
+		model.addAttribute("expense", expenseService.findByID(id));
+		// ^ this "expense" i.e first attribute will get mapped to modelAttribute
+		//at form tag and is needed to show how expense object 
 		//looks like so as to pass it directly to a method eg line30,31
 		return "update";
 	}
-//while creating post first you need to create get as well for same url.
+	
 	@PostMapping(value = "/updateData/{id}")
-	//@ResponseBody
 	public String updateData(ModelMap model, Expense expense, @PathVariable("id") int id) {
 		expense.setID(id);
 		expense.setBalance(expenseService.findByID(id).getBalance());
@@ -89,7 +84,6 @@ public class ExpenseController {
 	
 	@GetMapping(value = "/find/{term}")
 	public String getExpenseByReason(ModelMap model, @PathVariable("term") String searchTerm) {
-		//List<Expense> retrieveByReason = expenseService.retrieveByReason("sky");
 		model.put("expenses", expenseService.retrieveByReason(searchTerm));
 		return "search";
 	}
