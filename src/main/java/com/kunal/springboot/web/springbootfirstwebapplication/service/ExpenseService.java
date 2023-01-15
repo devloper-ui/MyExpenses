@@ -63,15 +63,8 @@ public class ExpenseService {
 		expenseRepository.updateData(expense.getFoor(), expense.getReason(), expense.getDate(), id);
 	}
 	
-//  public void deleteExpense(String reason) {
-//      Iterator<Expense> iterator = expenses.iterator();
-//      while (iterator.hasNext()) {
-//          Expense expense = iterator.next();
-//          if (expense.getReason() == reason) {
-//              iterator.remove();
-//          }
-//      }
-//  }
-
-    
+	public void deleteExpenseByID(int id) {
+		expenseRepository.deleteById(id);
+	}
+	
 }

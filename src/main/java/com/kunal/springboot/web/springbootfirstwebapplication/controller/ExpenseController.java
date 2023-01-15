@@ -80,8 +80,14 @@ public class ExpenseController {
 		expenseService.updateExpense(expense, id);
 		return "redirect:/displayData";
 	}
-
 	
+	
+	@GetMapping(value = "/deleteData/{id}")
+	public String deleteData(@PathVariable("id") int id) {
+		expenseService.deleteExpenseByID(id);
+		return "redirect:/displayData";
+	}
+
 	@GetMapping(value = "/find/{term}")
 	public String getExpenseByReason(ModelMap model, @PathVariable("term") String searchTerm) {
 		model.put("expenses", expenseService.retrieveByReason(searchTerm));

@@ -13,6 +13,7 @@
 				<th>For</th>
 				<th>Reason</th>
 				<th>Date</th>
+				<th>Update/Delete</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -24,6 +25,23 @@
 					<td>${expense.foor}</td>
 					<td>${expense.reason}</td>
 					<td>${expense.date}</td>
+										<td class="col-md-2">
+					<a class="btn btn-success"
+						href="/updateData/${expense.id}"> 
+						<span data-toggle="tooltip"
+							title="Update data" class="glyphicon glyphicon-refresh"
+							data-placement="right">
+						</span>
+					</a> 
+					<a class="btn btn-danger" href="/deleteData/${expense.id}"
+						style="pointer-events: none; cursor: default;"> 
+						<span
+							data-toggle="tooltip" title="Delete Data"
+							class="glyphicon glyphicon-trash" 
+							data-placement="right">
+						</span>
+					</a>
+					</td>
 				</tr>
 			</c:forEach>
 			<!-- for(Expense expense: expenses) since its html it does

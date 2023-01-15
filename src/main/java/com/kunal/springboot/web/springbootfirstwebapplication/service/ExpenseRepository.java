@@ -20,4 +20,5 @@ public interface ExpenseRepository extends CrudRepository<Expense, Integer>{
 	@Modifying(clearAutomatically = true)
 	@Query("update Expense e set e.Foor= :Foor, e.reason= :reason, e.Date= :Date where e.id= :id")
 	void updateData(String Foor, String reason, String Date, int id);
+	
 }

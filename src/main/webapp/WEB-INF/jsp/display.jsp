@@ -8,8 +8,8 @@
 				document.write(new Date().getFullYear())
 			</script>
 			<a class="btn btn-info" href="/insertData" style="float: right">Add
-				Expense</a> <span style="float: right">&nbsp&nbsp</span>
-			<a class="btn btn-info" href="/getBalance" style="float: right">Show
+				Expense</a> <span style="float: right">&nbsp&nbsp</span> <a
+				class="btn btn-info" href="/getBalance" style="float: right">Show
 				Balance</a>
 		</caption>
 
@@ -33,14 +33,22 @@
 					<td>${expense.reason}</td>
 					<td>${expense.date}</td>
 					<td class="col-md-2">
-						<a class="btn btn-success" href="/updateData/${expense.id}">
-							<span data-toggle="tooltip" 
-								  title="Update data" 
-								  class="glyphicon glyphicon-refresh"
-								  data-placement="right"></span>
-						</a>
+					<a class="btn btn-success"
+						href="/updateData/${expense.id}"> 
+						<span data-toggle="tooltip"
+							title="Update data" class="glyphicon glyphicon-refresh"
+							data-placement="right">
+						</span>
+					</a> 
+					<a class="btn btn-danger" href="/deleteData/${expense.id}"
+						style="pointer-events: none; cursor: default;"> 
+						<span
+							data-toggle="tooltip" title="Delete Data"
+							class="glyphicon glyphicon-trash" 
+							data-placement="right">
+						</span>
+					</a>
 					</td>
-					<!-- glyphicon glyphicon-trash -->
 				</tr>
 			</c:forEach>
 			<!-- for(Expense expense: expenses) since its html it does
