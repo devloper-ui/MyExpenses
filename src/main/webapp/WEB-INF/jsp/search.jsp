@@ -3,7 +3,7 @@
 <div class="container">
 	<table class="table table-bordered table-striped">
 		<caption>
-			Results for 
+			Results for ${serachTerm}
 		</caption>
 
 		<thead class="thead-light">

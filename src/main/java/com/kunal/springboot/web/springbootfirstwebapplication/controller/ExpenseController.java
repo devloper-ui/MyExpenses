@@ -91,6 +91,7 @@ public class ExpenseController {
 	@GetMapping(value = "/find/{term}")
 	public String getExpenseByReason(ModelMap model, @PathVariable("term") String searchTerm) {
 		model.put("expenses", expenseService.retrieveByReason(searchTerm));
+		model.put("serachTerm",searchTerm);
 		return "search";
 	}
 }
