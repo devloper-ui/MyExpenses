@@ -19,10 +19,10 @@
 			</form:select>
 		</fieldset>
 		<fieldset class="form-group">
-			<form:label path="reason">Reason:</form:label> <form:input type="text" path="reason" class="form-control"/>
+			<form:label path="reason">Reason*:</form:label> <form:input type="text" path="reason" class="form-control" required="true"/>
 		</fieldset>
 		<fieldset class="form-group">
-			<form:label path="date">Date:</form:label> <form:input type="text" path="date" class="form-control" autocomplete="off"/>
+			<form:label path="date">Date*:</form:label> <form:input type="text" path="date" class="form-control" autocomplete="off" required="true"/>
 		</fieldset>
 		<button type="submit" class="btn btn-success">Add</button>
 	</form:form>
